@@ -1,15 +1,27 @@
 import streamlit as st
 from joblib import load
 from PIL import Image
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd 
 
-# Set page title and heading
+df=pd.read_csv('data.csv')
+df.columns=['Sl. No.','Normalizing Temp','Through Hardening Temp','Through Hardening Time','Cooling Rate for Through Hardening','Carburization Temp',
+             'Carburization Time','Diffusion Temp','Diffusion time','Quenching Media Temp','Tempering Temp','Tempering Time','Cooling Rate for Tempering',
+             'C', 'Si', 'Mn', 'P', 'S', 'Ni', 'Cr', 'Cu', 'Mo','Reduction Ratio',
+              'Area Proportion of Inclusions Deformed by Plastic Work','Area Proportion of Inclusions Occurring in Discontinuous Array',
+              'Area Proportion of Isolated Inclusions','Fatigue Strength (10^7 Cycles)']
+
+x=df.drop(columns=['Sl. No.','Fatigue Strength (10^7 Cycles)'])
+y=df['Fatigue Strength (10^7 Cycles)']
+
+# Setting page title and heading
 st.set_page_config(page_title='Fatigue Strength Prediction', layout='wide')
 st.title('Prediction of Fatigue Strength for Steel alloys')
 
 image = Image.open('f_2.png')
 st.image(image, width=600)
 st.markdown("## enter parameters of the alloy and you will get the fatigue life below with 98.6% accuracy")
-# Define input sliders for each parameter
+# Defining input sliders for each parameter
 col1, col2, col3 = st.columns(3)
 with col1:
     st.header('Process Parameters')
@@ -66,7 +78,8 @@ inputs_list = [normalizing_temp, through_hardening_temp, through_hardening_time,
                area_proportion_of_isolated_inclusions]
 
 # Load and use the model
-regressor = load('forest_reg.joblib')
+regressor=RandomForestRegressor()
+regressor.fit(x,y)
 result = regressor.predict([inputs_list])[0]
 
 # Display the result
