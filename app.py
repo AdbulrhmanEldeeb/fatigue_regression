@@ -3,6 +3,23 @@ from joblib import load
 from PIL import Image
 from sklearn.ensemble import RandomForestRegressor
 import pandas as pd 
+import logging 
+
+logging.basicConfig(
+    level=logging.INFO,  # Set the log level to INFO or higher
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Define the log format
+)
+
+
+logging.info('App started')
+
+# Inside a function or block of code
+try:
+    # Code block
+    logging.info('someone logged to the app')
+except Exception as e:
+    logging.error(f'An error occurred: {str(e)}')
+
 
 df=pd.read_csv('data.csv')
 df.columns=['Sl. No.','Normalizing Temp','Through Hardening Temp','Through Hardening Time','Cooling Rate for Through Hardening','Carburization Temp',
@@ -87,5 +104,6 @@ st.header('Result')
 st.markdown(f"#### Predicted Fatigue Strength:    **{round(result, 1)} * 10^7 cycles**")
 st.divider()
 st.markdown("""Note:\n
+            Error of predicted results equals 3%   
             This prediction is pased on Random forest model with R squared value equals 98.6% """)
 
