@@ -17,3 +17,4 @@ img = qr.make_image(fill_color="black", back_color="white")
 
 # Save the image
 img.save("website_qrcode.png")
+
