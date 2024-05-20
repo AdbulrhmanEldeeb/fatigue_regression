@@ -61,7 +61,7 @@ ni = col6.slider("Nickel", 0.1, 2.78, 0.3)
 
 col4, col5, col6 = st.columns(3)
 cr = col4.slider("Chromium", 0.01, 1.17, 0.8)
-cu = col5.slider("Copper", 0.01, 1, 0.4)
+cu = col5.slider("Copper", 0.01, 1., 0.4)
 mo = col6.slider("Molybdenum", 0.01, 0.24, 0.2)
 
 # Reduction ratio and inclusion sliders
