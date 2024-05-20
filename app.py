@@ -19,7 +19,7 @@ y=df['Fatigue Strength (10^7 Cycles)']
 
 # Setting page title and heading
 st.set_page_config(page_title='Fatigue Strength Prediction', layout='wide')
-st.title('Prediction of Fatigue Strength for Steel alloys')
+st.title('Prediction of Fatigue Strength for Steel alloys at Stress 100 MPa')
 
 image = Image.open('f_2.png')
 st.image(image, width=600)
@@ -89,10 +89,11 @@ result = regressor.predict([inputs_list])[0]
 st.header('Result')
 st.markdown(f"#### Predicted Fatigue Strength:    **{round(result, 1)} * 10^7 cycles**")
 st.divider()
-st.markdown("""Note:\n
-            * Root Mean Squared Error of predicted results equals 20*10^7 cycle     
-            * This prediction is pased on Random forest model with R squared value equals 98.6%
-            * Initial values are for AISI 4140 steel """)
+st.markdown("""Note:
+            
+                * Root Mean Squared Error of predicted results equals 20*10^7 cycle     
+                * This prediction is pased on Random forest model with R squared value equals 98.6%
+                * Initial values are for AISI 4140 steel """)
 
 st.header('Contact Information')
 st.markdown("""
