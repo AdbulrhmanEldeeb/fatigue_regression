@@ -99,7 +99,7 @@ st.header('Contact Information')
 st.markdown("""
 * **Phone**: 01026821545
 * **Email**: abdodebo3@gmail.com
-* [GitHub](https://github.com/AdbulrhmanEldeeb)
-* [LinkedIn](https://www.linkedin.com/in/abdulrahman-eldeeb-8b4621253/)
-* [Facebook](https://www.facebook.com/profile.php?id=100005945643380)
+* [**GitHub**](https://github.com/AdbulrhmanEldeeb)
+* [**LinkedIn**](https://www.linkedin.com/in/abdulrahman-eldeeb-8b4621253/)
+* [**Facebook**](https://www.facebook.com/profile.php?id=100005945643380)
 """)
