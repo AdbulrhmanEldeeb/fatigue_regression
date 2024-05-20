@@ -94,3 +94,11 @@ st.markdown("""Note:\n
             * This prediction is pased on Random forest model with R squared value equals 98.6%
             * Initial values are for AISI 4140 steel """)
 
+st.header('Contact Information')
+st.markdown("""
+* **Phone**: 01026821545
+* **Email**: abdodebo3@gmail.com
+* **Facebook**: [Facebook](https://www.facebook.com/profile.php?id=100005945643380)
+* **GitHub**: [GitHub](https://github.com/AdbulrhmanEldeeb)
+* **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/abdulrahman-eldeeb-8b4621253/)
+""")
